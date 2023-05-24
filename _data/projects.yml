@@ -1,0 +1,12 @@
+- name: 🍅 Pomodoro Timer
+  url: /pomodoro/
+  description: A simple timer for the Pomodoro Technique
+#- name: Project 2
+#  url: https://project2.com
+#  description: This is a description of Project 2.
+
+
+#Rsync for folders
+#Msg viewer
+#Barcode Generator
+#Winmal.dat reader

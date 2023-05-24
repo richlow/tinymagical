@@ -1,18 +1,14 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hello! I'm [Your Name], a [Your Profession] based in [Your Location].
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I specialize in [what you specialize in], and I have [number of years of experience] years of experience in [field].
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+When I'm not [what you do professionally], I enjoy [hobbies/interests].
 
+Feel free to contact me at [your email address].
 
-[jekyll-organization]: https://github.com/jekyll

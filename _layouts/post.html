@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<body class="{{ page.body_class }}">
+<article>
+  <header>
+    <p>{{ page.date | date: "%B %d, %Y" }}</p>
+  </header>
+
+  <section>
+    {{ content }}
+  </section>
+
+  <footer>
+    <p>Posted by {{ site.author }}</p>
+  </footer>
+</article>
+</body>
