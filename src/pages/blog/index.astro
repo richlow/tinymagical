@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => {
+    const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+    const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+    return dateB - dateA;
+  }
+);
+
+const postsByYear = posts.reduce((acc, post) => {
+  const year = post.data.date ? new Date(post.data.date).getFullYear().toString() : 'Undated';
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {} as Record<string, typeof posts>);
+
+const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="Blog" description="Writing about building tiny products.">
+  <div class="blog-page">
+    {years.map(year => (
+      <div class="year-group">
+        <h2>{year}</h2>
+        <ul class="post-list">
+          {postsByYear[year].map(post => {
+            const slug = post.id.replace(/\.md$/, '');
+            return (
+              <li class="blogpost">
+                {post.data.date && (
+                  <span class="post-meta">
+                    {new Date(post.data.date).toLocaleDateString('en-AU', { month: 'long', day: 'numeric' })}
+                  </span>
+                )}
+                <a class="post-title" href={`/blog/${slug}`}>{post.data.title}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
